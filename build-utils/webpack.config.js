@@ -7,6 +7,7 @@ const getAddons = (addonsArgs) => {
 
   return addons
     .filter(Boolean)
+    // eslint-disable-next-line global-require
     .map((name) => require(`./addons/webpack.${name}.js`));
 };
 module.exports = ({ env, addon }) => {
